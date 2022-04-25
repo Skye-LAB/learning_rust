@@ -22,7 +22,7 @@ cargo 1.60.0 (d1fd9fe 2022-03-01)
 
 Anda dapat membuat proyek baru dengan Cargo dengan perintah berikut:
 
-```shell
+```bash
 $ cargo new hello_cargo
 ```
 
@@ -52,7 +52,7 @@ edition = "2021"
 
 Bagian pertama `[package]`, bagian ini adalah untuk mengonfigurasi package kita.
 
-Bagian kedua `[dependencies]`, disini adalah tempat untuk menambahkan dependensi. Di Rust, sebuah package disebut crates.
+Bagian kedua `[dependencies]`, disini adalah tempat untuk menambahkan dependensi. Di Rust, sebuah *package* disebut *crates*.
 
 Buka file *src/main.rs*.
 
@@ -62,4 +62,4 @@ fn main() {
 }
 ```
 
-Cargo juga membuat program `Hello, world` untuk Anda. Cargo membantu Anda untuk mengatur proyek Anda, Cargo mengharapkan source file Anda diletakkan didalam folder *src*.
+Cargo juga membuat program `Hello, world` untuk Anda. Cargo membantu Anda untuk mengatur proyek Anda, Cargo mengharapkan *source files* Anda diletakkan didalam folder *src*.
