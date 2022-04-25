@@ -1,4 +1,4 @@
-# Hello World
+# Hello, World!
 
 ## Penjelasan Program
 
@@ -30,7 +30,7 @@ Sebelum dapat menjalan program Rust, kita meng-compilenya dengan Rust compiler y
 $ rustc main.rs
 ```
 
-Jika kalian pernah belajar C/C++, anda akan melihat ini mirip `gcc` atau `clang`. Setelah compiling berhasil, Rust akan menghasilkan sebuah executable binary file.
+Jika kalian pernah belajar C/C++, Anda akan melihat ini mirip `gcc` atau `clang`. Setelah compiling berhasil, Rust akan menghasilkan sebuah executable binary file.
 
 Anda dapat melihatnya dengan perintah `ls`.
 

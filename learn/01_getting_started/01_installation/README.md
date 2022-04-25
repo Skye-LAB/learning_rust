@@ -22,7 +22,7 @@ Untuk mengecek apakah Rust sudah berhasil terinstall dengan benar, gunakan perin
 rustc --version
 ```
 
-Jika Rust terinstall dengan benar di komputer anda maka anda akan melihat baris seperti berikut:
+Jika Rust terinstall dengan benar di komputer Anda maka Anda akan melihat baris seperti berikut:
 
 ```bash
 rustc 1.60.0 (7737e0b5c 2022-04-04)
@@ -30,7 +30,7 @@ rustc 1.60.0 (7737e0b5c 2022-04-04)
 
 ## Update dan Uninstall
 
-Meng-update Rust dengan `rustup` sangatlah mudah, buka terminal anda dan jalankan perintah berikut:
+Meng-update Rust dengan `rustup` sangatlah mudah, buka terminal Anda dan jalankan perintah berikut:
 
 ```bash
 rustup update
@@ -44,4 +44,4 @@ rustup self Uninstall
 
 ## Dokumentasi
 
-Untuk melihat dokumentasi Rust secara lokal, sehingga anda dapat melihatnya secara offline, jalankan perintah `rustup doc` untuk membuka dokumentasi lokal di browser anda.
+Untuk melihat dokumentasi Rust secara lokal, sehingga Anda dapat melihatnya secara offline, jalankan perintah `rustup doc` untuk membuka dokumentasi lokal di browser Anda.
