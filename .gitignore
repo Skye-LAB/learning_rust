@@ -1,0 +1,5 @@
+# lock files
+*/*.lock
+
+# target folders
+*/target/
