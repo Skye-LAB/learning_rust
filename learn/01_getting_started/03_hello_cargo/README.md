@@ -63,3 +63,35 @@ fn main() {
 ```
 
 Cargo juga membuat program `Hello, world` untuk Anda. Cargo membantu Anda untuk mengatur proyek Anda, Cargo mengharapkan *source files* Anda diletakkan didalam folder *src*.
+
+## Menjalankan dan Build Proyek Cargo
+
+Untuk mem-build proyek Cargo, Anda dapat jalankan perintah berikut:
+
+```bash
+$ cargo build
+```
+
+Perintah diatas akan membuat file executable di *target/debug/hello_cargo*. Anda dapat menjalankan file tersebut dengan perintah:
+
+```bash
+$ ./target/debug/hello_cargo
+Hello, world!
+```
+
+Menjalanan perintah `cargo build` untuk yang pertama kali, Cargo akan membuat file *Cargo.lock*. File ini akan melacak versi dependensi dengan tepat di proyek Anda.
+
+Kita baru saja  mem-build proyek kita dengan `cargo build` dan menjalankannya  dengan `./target/build/hello_cargo`, tapi kita juga bisa menggunakan perintah `cargo run` untuk meng-compile code dan menjalankan file executable yang dihasilkan.
+
+```bash
+$ cargo rus
+    Finished dev [unoptimized + debuginfo] target(s) in 0.34s
+     Running `target/debug/hello_cargo`
+Hello, world!
+```
+
+Cargo juga menyediakan perintah `cargo check` untuk mengecek program tanpa membuat file executable.
+
+## Build Untuk Release
+
+Ketika proyek Anda sudah siap untuk release, Anda dapat menggunakan perintah `cargo build --release` untuk meng-compile-nya dengan pengoptimalan. Perintah ini akan membuat file executable di folder *target/release*.
