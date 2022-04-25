@@ -30,10 +30,11 @@ Setelah menjalankan perintah diatas, maka akan terbuat struktur folder seperti b
 
 ```
 hello_cargo/
-    .git/
-    src/
-        main.rs
-    Cargo.toml
+├── Cargo.toml
+├── .gitignore
+├── .git/
+└── src/
+    └── main.rs
 ```
 
 Perintah tadi juga akan meng-inisialisasi git repositori baru bersama dengan file `.gitignore`. Git Files tidak akan dibuat, jika Anda menjalankan perintah `cargo new` didalam sebuah git repositori.
