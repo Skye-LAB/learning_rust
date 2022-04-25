@@ -84,7 +84,7 @@ Menjalanan perintah `cargo build` untuk yang pertama kali, Cargo akan membuat fi
 Kita baru saja  mem-build proyek kita dengan `cargo build` dan menjalankannya  dengan `./target/build/hello_cargo`, tapi kita juga bisa menggunakan perintah `cargo run` untuk meng-compile code dan menjalankan file executable yang dihasilkan.
 
 ```bash
-$ cargo rus
+$ cargo run
     Finished dev [unoptimized + debuginfo] target(s) in 0.34s
      Running `target/debug/hello_cargo`
 Hello, world!
