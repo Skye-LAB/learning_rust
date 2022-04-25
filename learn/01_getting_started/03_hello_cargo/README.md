@@ -22,7 +22,7 @@ cargo 1.60.0 (d1fd9fe 2022-03-01)
 
 Anda dapat membuat proyek baru dengan Cargo dengan perintah berikut:
 
-```bash
+```shell
 $ cargo new hello_cargo
 ```
 
