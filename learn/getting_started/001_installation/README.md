@@ -22,7 +22,7 @@ Untuk mengecek apakah Rust sudah berhasil terinstall dengan benar, gunakan perin
 rustc --version
 ```
 
-Jika Rust terinstall dengan benar di komputer anda makan anda akan melihat baris seperti berikut:
+Jika Rust terinstall dengan benar di komputer anda maka anda akan melihat baris seperti berikut:
 
 ```bash
 rustc 1.60.0 (7737e0b5c 2022-04-04)
