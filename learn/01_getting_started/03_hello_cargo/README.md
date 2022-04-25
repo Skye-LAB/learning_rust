@@ -30,15 +30,15 @@ Setelah menjalankan perintah diatas, maka akan terbuat struktur folder seperti b
 
 ```
 hello_cargo/
-  .git/
-  src/
-    main.rs
-  Cargo.toml
+    .git/
+    src/
+        main.rs
+    Cargo.toml
 ```
 
 Perintah tadi juga akan meng-inisialisasi git repositori baru bersama dengan file `.gitignore`. Git Files tidak akan dibuat, jika Anda menjalankan perintah `cargo new` didalam sebuah git repositori.
 
-Buka file `Cargo.toml` dan Anda akan melihat yang hampir seperti ini:
+Buka file *Cargo.toml* dan Anda akan melihat yang hampir seperti ini:
 
 ```toml
 [package]
@@ -53,7 +53,7 @@ Bagian pertama `[package]`, bagian ini adalah untuk mengonfigurasi package kita.
 
 Bagian kedua `[dependencies]`, disini adalah tempat untuk menambahkan dependensi. Di Rust, sebuah package disebut crates.
 
-Buka file `src/main.rs`.
+Buka file *src/main.rs*.
 
 ```rust
 fn main() {
