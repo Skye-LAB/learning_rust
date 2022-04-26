@@ -59,3 +59,16 @@ let mut bananas = 5; // mutable
 ```
 
 Kembali ke program game menebak angka, variabel `guess` akan diisi dengan hasil dari pemanggilan fungsi `String::new()`, sebuah fungsi yang akan mengembalikan instance baru suatu `String`. tanda `::`, menandakan fungsi `new` adalah sebuah associated function dari `String`.
+
+## Menerima Inputan dari user
+
+Di awal, kita sudah menambahkan library `io` di baris pertama program kita, sekarang di panggi fungsi `stdin`, yang akan membantu kita menangani inputan dari user.
+
+```rust
+    io::stdin()
+        .read_line(&mut guess)
+```
+
+Jika kita tidak meng-import library `io` dengan `use std::io`, kita dapat memanggil fungsi `stdin` dengan `std::io::stdin`. 
+
+Selanjutnya, baris `.read_line(&mut guess)`
