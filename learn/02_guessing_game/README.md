@@ -22,3 +22,23 @@ fn main() {
 }
 
 ```
+
+Pertama, untuk mendapatkan inputan dari user lalu menampilkannya sebagai output, kita perlu menambahkan library `io`, library `io` berada dalam library standard, yang dipanggil `std`:
+
+```rust
+use std::io;
+```
+
+Seperti yang sudah Anda pelajari di [Chapter 1](../01_getting_started), bahwa fungsi `main` adalah *entry point* dalam sebuah program.
+
+```rust
+fn main() {}
+```
+
+Juga, sudah Anda pelajari di [Chapter 1](../01_getting_started), bahwa `println!` adalah sebuah *macro* yang akan menampilkan string ke layar.
+
+```rust
+    println!("Guess the number!");
+
+    println!("Please input your guess.");
+```
