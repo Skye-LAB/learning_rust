@@ -71,4 +71,4 @@ Di awal, kita sudah menambahkan library `io` di baris pertama program kita, seka
 
 Jika kita tidak meng-import library `io` dengan `use std::io`, kita dapat memanggil fungsi `stdin` dengan `std::io::stdin`. 
 
-Selanjutnya, baris `.read_line(&mut guess)`
+Selanjutnya, baris `.read_line(&mut guess)` memanggil fungsi `read_line` yang akan menangkap inputan dari user. Kita juga menambahkan `&mut guess` sebagai argument di fungsi `read_line`. Tanda `&` menunjukkan bahwa argument ini adalah sebuah *reference*, yang memberikan jalan ke banyak bagian di kode mu untuk mengakses satu data tanpa perlu mengkopi data tersebut ke memori berkali-kali. Reference adalah sebuah fitur yang kompleks, juga salah satu keunggulan Rust. Kita akan mempelajari *reference* di [Chapter 4](../04_understanding_ownership).
