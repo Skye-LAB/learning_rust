@@ -1,78 +1,58 @@
 # Game Menebak Angka
 
-## Mengolah Tebakan
+## Membuat Nomor Acak
 
-Bagian pertama dalam game menebak angka adalah program untuk menanyai inputan dari user dan mengecek apakah sama seperti yang diharapkan. Ok, kita mengambil inputan dari user dengan program berikut:
+### Menginstall Dependensi
+
+Untuk membuat sebuah nilai acak, kita perlu sebuah crate yairu `rand`. Kita bisa menginstalnya dengan menambahkan baris dibawah ini ke *Cargo.toml* di bagian `[dependencies]`.
+
+```toml
+rand = "0.8.3"
+```
+
+Kemudian jalankan perintah `cargo build` untuk menginstal dependensi yang baru saja ditambahkan.
+
+### Membuat Nomor Acak
+
+Untuk membuat nomor secara acak, pertama kita perlu memanggil library `rand`.
+
+```rust
+use rand::Rng;
+```
+
+`Rng` merupakan sebuah *trait*. Trait akan kita pelajari di [Chapter 10](../generic_types_traits_and_lifetimes)
+
+Kemudian untuk membuat nomor acak, kita menggunakan kode:
+
+```rust
+let secret_number = rand::thread_rng().gen_range(1..101);
+```
+
+Untuk cara penulisan variabel, kita akan pelajari di [Chapter 3](../03_common_programming_concepts).
+
+Pertama, kita memanggil fungsi `rand::thread_rng()`, tanda `::`, menandakan fungsi `thread_rng` adalah sebuah associated function dari `rand`. Kemudian kita memanggil fungsi `gen_range`, fungsi ini akan menerima ekspresi rentang nomor sebagai argumen dan menghasilkan nomor acak dalam rentang tersebut. Disini kita memakai rentang 1 sampai 100, `1..101` atau `1.=100`.
+
+## Menangkap Inputan Dari User
+
+Untuk menangkap inputan dari user, kita menggunakan kode berikut:
+
+```rust
+let mut guess = String::new();
+
+io::stdin()
+    .read_line(&mut guess)
+    .expect("Failed to read line");
+```
+
+Sebelumnya, kita perlu menambahkan library `io` diawal program.
 
 ```rust
 use std::io;
-
-fn main() {
-    println!("Guess the number!");
-
-    println!("Please input your guess.");
-
-    let mut guess = String::new();
-
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
-
-    println!("You guessed: {}", guess);
-}
 ```
 
-Pertama, untuk mendapatkan inputan dari user lalu menampilkannya sebagai output, kita perlu menambahkan library `io`, library `io` berada dalam library standard, yang dipanggil `std`:
-
-```rust
-use std::io;
-```
-
-Seperti yang sudah Anda pelajari di [Chapter 1](../01_getting_started), bahwa fungsi `main` adalah *entry point* dalam sebuah program.
-
-```rust
-fn main() {}
-```
-
-Juga, sudah Anda pelajari di [Chapter 1](../01_getting_started), bahwa `println!` adalah sebuah *macro* yang akan menampilkan string ke layar.
-
-```rust
-    println!("Guess the number!");
-
-    println!("Please input your guess.");
-```
-
-## Menyimpan Nilai Dengan Variabel
-
-Selanjutnya, kita membuat sebuah variabel untuk menyimpan inputan dari user, seperti ini:
-
-```rust
-    let mut guess = String::new();
-```
-
-Untuk membuat sebuah variabel di Rust di memakai keyword `let`. Secara default, variabel di Rust tidak bisa diupdate atau *immutable*,untuk membuat sebuah variabel menjadi mutable, kita menambahkan keyword `mut` setelah `let`.
-
-```rust
-let apples = 5; // immutable
-let mut bananas = 5; // mutable
-```
-
-Kembali ke program game menebak angka, variabel `guess` akan diisi dengan hasil dari pemanggilan fungsi `String::new()`, sebuah fungsi yang akan mengembalikan instance baru suatu `String`. tanda `::`, menandakan fungsi `new` adalah sebuah associated function dari `String`.
-
-## Menerima Inputan dari user
-
-Di awal, kita sudah menambahkan library `io` di baris pertama program kita, sekarang di panggi fungsi `stdin`, yang akan membantu kita menangani inputan dari user.
-
-```rust
-    io::stdin()
-        .read_line(&mut guess)
-```
-
-Jika kita tidak meng-import library `io` dengan `use std::io`, kita dapat memanggil fungsi `stdin` dengan `std::io::stdin`. 
+Fungsi `io::stdin` akan me-return sebuah instance dari `std:io:Stdin`, yang merupakan sebuah tipe yang menangani input standar untuk terminal Anda.
 
 Selanjutnya, baris `.read_line(&mut guess)` memanggil fungsi `read_line` yang akan menangkap inputan dari user. Kita juga menambahkan `&mut guess` sebagai argument di fungsi `read_line`. Tanda `&` menunjukkan bahwa argument ini adalah sebuah *reference*, yang memberikan jalan ke banyak bagian di kode mu untuk mengakses satu data tanpa perlu mengkopi data tersebut ke memori berkali-kali. Reference adalah sebuah fitur yang kompleks, juga salah satu keunggulan Rust. Kita akan mempelajari *reference* di [Chapter 4](../04_understanding_ownership).
-
-## Menangani Potensi Gagal Dengan Tipe Result
 
 Selanjutnya adalah perintah ini:
 
@@ -86,27 +66,12 @@ Enums `Result` memiliki dua varian, yaitu `Ok` dan `Err`. Varian `Ok` menandakan
 
 Nilai dalam tipe `Result` sama seperti nilai pada tipe lainnya, mempunyai *methods* didalamnya. sebuah instance dari `io::Result` mempunyai `expect` method. Jika sebuah instance dari `io::Result` adalah sebuah nilai `Err`, maka `expect` akan memnyebabkan program crash dan akan menampilkan pesan yang Anda masukkan sebagai argument didalamnya. Jika nilainya adalah berupa `Ok`, maka nilai yang ada dalam `Ok` akan di-return.
 
-## Mencetak Nilai Dengan println! Placeholders
+## Mencetak Nilai Dengan println! Placeholder
 
-Tersisa satu baris kode lagi, yaitu:
+Selanjutnya, adalah perintah dibawah ini:
 
 ```rust
     println!("You guessed: {}", guess);
 ```
 
 Baris ini akan mencetak string yang mengandung inputan dari user. tanda `{}` merupakan sebuah placeholder, yang dengannya kita dapat mencetak nilai dari sebuah variabel.
-
-## Mencoba Bagian Pertama
-
-Mari kita jalankan program kita dengan `cargo run`.
-
-```bash
-$ cargo run
-   Compiling guessing_game v0.1.0 (file:///projects/guessing_game)
-    Finished dev [unoptimized + debuginfo] target(s) in 6.44s
-     Running `target/debug/guessing_game`
-Guess the number!
-Please input your guess.
-6
-You guessed: 6
-```

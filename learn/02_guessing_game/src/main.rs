@@ -1,15 +1,38 @@
+use rand::Rng;
+use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    println!("Guess the number!");
+    println!("Gues the number!");
 
-    println!("Please input your guess.");
+    // membuat sebuah nomor random
+    let secret_number = rand::thread_rng().gen_range(1..101);
 
-    let mut guess = String::new();
+    // akan terus looping sampai ter-break
+    loop {
+        let mut guess = String::new();
 
-    io::stdin()
-        .read_line(&mut guess)
-        .expect("Failed to read line");
+        // menangkap inputan user
+        io::stdin()
+            .read_line(&mut guess)
+            .expect("Failed to read line");
 
-    println!("You guessed: {}", guess);
+        // mengecek apakah inputan user adalah nomor atau bukan
+        let guess: u32 = match guess.trim().parse() {
+            Ok(num) => num,
+            Err(_) => continue,
+        };
+
+        println!("You guessed: {}", guess);
+
+        // melihat tebakan user benar atau tidak
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too small!"),
+            Ordering::Greater => println!("Too big!"),
+            Ordering::Equal => {
+                println!("You win!");
+                break;
+            }
+        }
+    }
 }
