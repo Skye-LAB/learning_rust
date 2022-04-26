@@ -42,3 +42,20 @@ Juga, sudah Anda pelajari di [Chapter 1](../01_getting_started), bahwa `println!
 
     println!("Please input your guess.");
 ```
+
+## Menyimpan Nilai Dengan Variabel
+
+Selanjutnya, kita membuat sebuah variabel untuk menyimpan inputan dari user, seperti ini:
+
+```rust
+    let mut guess = String::new();
+```
+
+Untuk membuat sebuah variabel di Rust di memakai keyword `let`. Secara default, variabel di Rust tidak bisa diupdate atau *immutable*,untuk membuat sebuah variabel menjadi mutable, kita menambahkan keyword `mut` setelah `let`.
+
+```rust
+let apples = 5; // immutable
+let mut bananas = 5; // mutable
+```
+
+Kembali ke program game menebak angka, variabel `guess` akan diisi dengan hasil dari pemanggilan fungsi `String::new()`, sebuah fungsi yang akan mengembalikan instance baru suatu `String`. tanda `::`, menandakan fungsi `new` adalah sebuah associated function dari `String`.
