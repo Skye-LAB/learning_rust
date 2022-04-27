@@ -96,7 +96,7 @@ Dalam program kita kali ini, user bisa saja menginputkan sebuah huruf atau kata 
 
 Dalam kode diatas, kita mendeklarasikan variabel `guess` lagi, hal ini disebhut *shadowing*. Shadowing membuat menggunakan kembali variabel `guess` daripada membuat variabel baru yang berbeda. Kita akan mempelajari shadowing lebih lanjut di [Chapter 3][chapter3].
 
-Fungsi `trim` akan menghapus semua whitespace dari variabel `guess`, kemudian fungsi `parse`, fungsi ini meng-convert string ke integer dan akan me-return type `Result` yang memiliki varian `Ok` dan `Err`. Lalu dengan `match` kondisi varian akan dipilih, jika `Ok` maka hasil dari `parse` akan di return, jika `Err` maka looping akan di lanjutkan atau di `continue`.
+Fungsi `trim` akan menghapus semua whitespace dari variabel `guess`, kemudian fungsi `parse`, fungsi ini meng-convert string ke integer dan akan me-return tipe `Result` yang memiliki varian `Ok` dan `Err`. Lalu dengan `match` kondisi varian akan dipilih, jika `Ok` maka hasil dari `parse` akan di return, jika `Err` maka looping akan di lanjutkan atau di `continue`.
 
 ## Mencetak Nilai Dengan println! Placeholder
 
@@ -131,7 +131,7 @@ fn main() {
 }
 ```
 
-Pertama, kita memanggil type `std::cmp::Ordering` dengan `use`. Tipe `Ordering` adalah sebuah *enum* yang memiliki varian `Less`, `Greater` dan `Equal`.
+Pertama, kita memanggil tipe `std::cmp::Ordering` dengan `use`. Tipe `Ordering` adalah sebuah *enum* yang memiliki varian `Less`, `Greater` dan `Equal`.
 
 Fungsi `cmp` adalah untuk membandingkan dua nilai. Itu mengambil *reference* ke pembandingnya. Disini kita membandingkan `guess` dengan `secret_number`. Kemudian akan me-return sebuah varian dari `Ordering`. Kita menggunkan `match` expression untuk memutuskan apa yang akan dilakukan berdasarkan varian dari `Ordering` dan hasil return fungsi `cmp`.
 
