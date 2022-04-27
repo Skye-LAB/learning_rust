@@ -126,4 +126,25 @@ Fungsi `cmp` adalah untuk membandingkan dua nilai. Itu mengambil *reference* ke 
 
 Jika nomor yang dibandingkan terlalu besar maka fungsi `cmp` akan me-return `Ordering::Greater`, maka di `match` expression akan terpilih sesuai dengan varian `Ordering` yaitu `Ordering::Greater` lalu akan menjalankan perintah berikutnya, `println!("Too big!")` yang akan menampilkan `Too big!` kelayar. Begitu juga varian yang lainnya.
 
-> didalam varian `Ordering::Equal` terdapat keyword `break`, adalah untuk menghentikan looping ketika angka yang ditebak sudah benar.
+> Didalam varian `Ordering::Equal` terdapat keyword `break`, adalah untuk menghentikan looping ketika angka yang ditebak sudah benar.
+
+Wow, itu sangat banyak. Baik, Anda sudah menyelesaikan Chapter 2 dari [Rust Lang Book](https://doc.rust-lang.org/stable/book/), disini kita membuat sebuah program untuk menebak sebuah angka acak. Jika program di jalankan dengan `cargo run`, hasilnya akan seperti berikut:
+
+```bash
+   Compiling guessing_game v0.1.0 (file:///guessing_game)
+    Finished dev [unoptimized + debuginfo] target(s) in 10.97s
+     Running `target/debug/guessing_game`
+Gues the number!
+40
+You guessed: 40
+Too big!
+20
+You guessed: 20
+Too big!
+15
+You guessed: 15
+Too big!
+13
+You guessed: 13
+You win!
+```
