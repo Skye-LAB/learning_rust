@@ -4,7 +4,7 @@
 
 ### Menambahkan Dependensi
 
-Untuk membuat sebuah nilai acak, kita perlu sebuah crate yairu `rand`. Kita bisa menginstalnya dengan menambahkan baris dibawah ini ke *Cargo.toml* di bagian `[dependencies]`.
+Untuk membuat sebuah nilai acak, kita perlu sebuah crate yaitu `rand`. Kita bisa menginstalnya dengan menambahkan baris dibawah ini ke *Cargo.toml* di bagian `[dependencies]`.
 
 ```toml
 rand = "0.8.3"
@@ -77,9 +77,9 @@ Selanjutnya adalah perintah ini:
         .expect("Failed to read line");
 ```
 
-Fungsi `read_line` sebelumnya akan meletakkan apapun yang user inputkan ke dalam string yang kita berikan, yaitu `&mut guess`, fungsi ini juga akan me-return sebuah nilai, di kasus ini adalah `io::Result`. Tipe `Result` adalah sebuah *enums*, yang dapat memiliki serangkaian kemungkinan tetap, yang dikenal sebagai *varian*, kita akan mempelajari *enums* di [Chapter 6](../06_enums_and_pattern_matching). Enums biasa digunakan bersama `match`, sebuah kondisional untuk mengeksekusi kode berbeda berdasarkan varian enums tersebut.
+Fungsi `read_line` sebelumnya akan meletakkan apapun yang user inputkan ke dalam string yang kita berikan, yaitu `&mut guess`, fungsi ini juga akan me-return sebuah nilai, di kasus ini adalah `io::Result`. Tipe `Result` adalah sebuah *enum*, yang dapat memiliki serangkaian kemungkinan tetap, yang dikenal sebagai *varian*, kita akan mempelajari *enum* di [Chapter 6](../06_enums_and_pattern_matching). Enum biasa digunakan bersama `match`, sebuah kondisional untuk mengeksekusi kode berbeda berdasarkan varian enum tersebut.
 
-Enums `Result` memiliki dua varian, yaitu `Ok` dan `Err`. Varian `Ok` menandakan operasi berhasil dan didalamnya adalah nilai yang berhasil dihasilkan. Varian `Err` menandakan operasi gagal dan didalamnya terdapat informasi tentang bagaimana dan mengapa operasi tersebut gagal.
+Enum `Result` memiliki dua varian, yaitu `Ok` dan `Err`. Varian `Ok` menandakan operasi berhasil dan didalamnya adalah nilai yang berhasil dihasilkan. Varian `Err` menandakan operasi gagal dan didalamnya terdapat informasi tentang bagaimana dan mengapa operasi tersebut gagal.
 
 Nilai dalam tipe `Result` sama seperti nilai pada tipe lainnya, mempunyai *methods* didalamnya. sebuah instance dari `io::Result` mempunyai `expect` method. Jika sebuah instance dari `io::Result` adalah sebuah nilai `Err`, maka `expect` akan memnyebabkan program crash dan akan menampilkan pesan yang Anda masukkan sebagai argument didalamnya. Jika nilainya adalah berupa `Ok`, maka nilai yang ada dalam `Ok` akan di-return.
 
@@ -102,6 +102,8 @@ Baris ini akan mencetak string yang mengandung inputan dari user. tanda `{}` mer
 Untuk membandingkan tebakan dan angka acak, kita menggunakan kode berikut:
 
 ```rust
+use std::cmp::Ordering;
+
 fn main() {
     loop {
         // kode sebelumnya
@@ -117,3 +119,9 @@ fn main() {
     }
 }
 ```
+
+Pertama, kita memanggil type `std::cmp::Ordering` dengan `use`. Tipe `Ordering` adalah sebuah *enum* yang memiliki varian `Less`, `Greater` dan `Equal`.
+
+Fungsi `cmp` adalah untuk membandingkan dua nilai. Itu mengambil *reference* ke pembandingnya. Disini kita membandingkan `guess` dengan `secret_number`. Kemudian akan me-return sebuah varian dari `Ordering`. Kita menggunkan `match` expression untuk memutuskan apa yang akan dilakukan berdasarkan varian dari `Ordering` dan hasil return fungsi `cmp`.
+
+Jika nomor yang dibandingkan terlalu besar maka fungsi `cmp` akan me-return `Ordering::Greater`, maka di `match` expression akan terpilih sesuai dengan varian `Ordering` yaitu `Ordering::Greater` lalu akan menjalankan perintah berikutnya, `println!("Too big!")` yang akan menampilkan `Too big!` kelayar. Bagitu juga varian yang lainnya.
