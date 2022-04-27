@@ -25,7 +25,7 @@ fn main() {
 
         println!("You guessed: {}", guess);
 
-        // melihat tebakan user benar atau tidak
+        // menentukan tebakan user benar atau tidak
         match guess.cmp(&secret_number) {
             Ordering::Less => println!("Too small!"),
             Ordering::Greater => println!("Too big!"),

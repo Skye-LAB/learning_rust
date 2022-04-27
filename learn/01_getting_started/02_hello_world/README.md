@@ -10,6 +10,8 @@ fn main() {
 }
 ```
 
+> tanda `//` merupakan sebuah comment di Rust, jadi setiap kode yang berada di tanda ini tidak akan dijalankan
+
 fungsi `fn main()` akan dijalankan pertama kali di setiap program Rust. Badan fungsi akan terdapat di dalam kurung kurawal `{}`.
 
 didalam fungi `main` terdapat kode:

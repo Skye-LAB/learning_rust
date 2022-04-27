@@ -2,7 +2,7 @@
 
 ## Membuat Nomor Acak
 
-### Menginstall Dependensi
+### Menambahkan Dependensi
 
 Untuk membuat sebuah nilai acak, kita perlu sebuah crate yairu `rand`. Kita bisa menginstalnya dengan menambahkan baris dibawah ini ke *Cargo.toml* di bagian `[dependencies]`.
 
@@ -10,7 +10,7 @@ Untuk membuat sebuah nilai acak, kita perlu sebuah crate yairu `rand`. Kita bisa
 rand = "0.8.3"
 ```
 
-Kemudian jalankan perintah `cargo build` untuk menginstal dependensi yang baru saja ditambahkan.
+Kemudian jalankan perintah `cargo build` untuk men-download dependensi yang baru saja ditambahkan.
 
 ### Membuat Nomor Acak
 
@@ -28,9 +28,27 @@ Kemudian untuk membuat nomor acak, kita menggunakan kode:
 let secret_number = rand::thread_rng().gen_range(1..101);
 ```
 
-Untuk cara penulisan variabel, kita akan pelajari di [Chapter 3](../03_common_programming_concepts).
+Untuk menulis variabel di Rust, kita menggunakan keyword `let` diikuti dengan nama variabel. Secara default, variabel di Rust tidak bisa diupdate atau *immutable*,untuk membuat sebuah variabel menjadi mutable, kita menambahkan keyword `mut` setelah `let`.
+
+```rust
+let apples = 5; // immutable
+let mut bananas = 5; // mutable
+```
+Untuk variabel, kita akan pelajari di [Chapter 3](../03_common_programming_concepts).
 
 Pertama, kita memanggil fungsi `rand::thread_rng()`, tanda `::`, menandakan fungsi `thread_rng` adalah sebuah associated function dari `rand`. Kemudian kita memanggil fungsi `gen_range`, fungsi ini akan menerima ekspresi rentang nomor sebagai argumen dan menghasilkan nomor acak dalam rentang tersebut. Disini kita memakai rentang 1 sampai 100, `1..101` atau `1.=100`.
+
+## Mengizinkan Beberapa Tebakan Dengan Looping
+
+Untuk membuat sebuah looping, agar user dapat menginputkan banyak tebakan, kita menggunakan perintah `loop`.
+
+```rust
+loop {
+    // kodemu berada disini
+}
+```
+
+Untuk menghentikan looping ini, kita dapat menggunakan keyword `break`.
 
 ## Menangkap Inputan Dari User
 
@@ -64,6 +82,10 @@ Fungsi `read_line` sebelumnya akan meletakkan apapun yang user inputkan ke dalam
 Enums `Result` memiliki dua varian, yaitu `Ok` dan `Err`. Varian `Ok` menandakan operasi berhasil dan didalamnya adalah nilai yang berhasil dihasilkan. Varian `Err` menandakan operasi gagal dan didalamnya terdapat informasi tentang bagaimana dan mengapa operasi tersebut gagal.
 
 Nilai dalam tipe `Result` sama seperti nilai pada tipe lainnya, mempunyai *methods* didalamnya. sebuah instance dari `io::Result` mempunyai `expect` method. Jika sebuah instance dari `io::Result` adalah sebuah nilai `Err`, maka `expect` akan memnyebabkan program crash dan akan menampilkan pesan yang Anda masukkan sebagai argument didalamnya. Jika nilainya adalah berupa `Ok`, maka nilai yang ada dalam `Ok` akan di-return.
+
+## Menangani Inputan Yang Invalid
+
+
 
 ## Mencetak Nilai Dengan println! Placeholder
 
