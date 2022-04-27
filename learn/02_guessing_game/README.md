@@ -124,4 +124,6 @@ Pertama, kita memanggil type `std::cmp::Ordering` dengan `use`. Tipe `Ordering` 
 
 Fungsi `cmp` adalah untuk membandingkan dua nilai. Itu mengambil *reference* ke pembandingnya. Disini kita membandingkan `guess` dengan `secret_number`. Kemudian akan me-return sebuah varian dari `Ordering`. Kita menggunkan `match` expression untuk memutuskan apa yang akan dilakukan berdasarkan varian dari `Ordering` dan hasil return fungsi `cmp`.
 
-Jika nomor yang dibandingkan terlalu besar maka fungsi `cmp` akan me-return `Ordering::Greater`, maka di `match` expression akan terpilih sesuai dengan varian `Ordering` yaitu `Ordering::Greater` lalu akan menjalankan perintah berikutnya, `println!("Too big!")` yang akan menampilkan `Too big!` kelayar. Bagitu juga varian yang lainnya.
+Jika nomor yang dibandingkan terlalu besar maka fungsi `cmp` akan me-return `Ordering::Greater`, maka di `match` expression akan terpilih sesuai dengan varian `Ordering` yaitu `Ordering::Greater` lalu akan menjalankan perintah berikutnya, `println!("Too big!")` yang akan menampilkan `Too big!` kelayar. Begitu juga varian yang lainnya.
+
+> didalam varian `Ordering::Equal` terdapat keyword `break`, adalah untuk menghentikan looping ketika angka yang ditebak sudah benar.
