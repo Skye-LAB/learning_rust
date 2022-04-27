@@ -14,7 +14,7 @@ fn main() {
 
 fungsi `fn main()` akan dijalankan pertama kali di setiap program Rust. Badan fungsi akan terdapat di dalam kurung kurawal `{}`.
 
-didalam fungi `main` terdapat kode:
+didalam fungsi `main` terdapat kode:
 
 ```rust
 println!("Hello, world!");
