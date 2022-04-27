@@ -34,7 +34,7 @@ Untuk menulis variabel di Rust, kita menggunakan keyword `let` diikuti dengan na
 let apples = 5; // immutable
 let mut bananas = 5; // mutable
 ```
-Untuk variabel, kita akan pelajari di [Chapter 3](../03_common_programming_concepts).
+Untuk variabel, kita akan pelajari di [Chapter 3][chapter3].
 
 Pertama, kita memanggil fungsi `rand::thread_rng()`, tanda `::`, menandakan fungsi `thread_rng` adalah sebuah associated function dari `rand`. Kemudian kita memanggil fungsi `gen_range`, fungsi ini akan menerima ekspresi rentang nomor sebagai argumen dan menghasilkan nomor acak dalam rentang tersebut. Disini kita memakai rentang 1 sampai 100, `1..101` atau `1.=100`.
 
@@ -95,6 +95,8 @@ Dalam program kita kali ini, user bisa saja menginputkan sebuah huruf atau kata 
 ```
 
 Dalam kode diatas, kita mendeklarasikan variabel `guess` lagi, hal ini disebhut *shadowing*. Shadowing membuat menggunakan kembali variabel `guess` daripada membuat variabel baru yang berbeda. Kita akan mempelajari shadowing lebih lanjut di [Chapter 3][chapter3].
+
+Fungsi `trim` akan menghapus semua whitespace dari variabel `guess`, kemudian fungsi `parse`, fungsi ini meng-convert string ke integer dan akan me-return type `Result` yang memiliki varian `Ok` dan `Err`. Lalu dengan `match` kondisi varian akan dipilih, jika `Ok` maka hasil dari `parse` akan di return, jika `Err` maka looping akan di lanjutkan atau di `continue`.
 
 ## Mencetak Nilai Dengan println! Placeholder
 
