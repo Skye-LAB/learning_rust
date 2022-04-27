@@ -96,3 +96,24 @@ Selanjutnya, adalah perintah dibawah ini:
 ```
 
 Baris ini akan mencetak string yang mengandung inputan dari user. tanda `{}` merupakan sebuah placeholder, yang dengannya kita dapat mencetak nilai dari sebuah variabel.
+
+## Membandingkan Tebakan Dan Angka Acak
+
+Untuk membandingkan tebakan dan angka acak, kita menggunakan kode berikut:
+
+```rust
+fn main() {
+    loop {
+        // kode sebelumnya
+
+        match guess.cmp(&secret_number) {
+            Ordering::Less => println!("Too small!"),
+            Ordering::Greater => println!("Too big!"),
+            Ordering::Equal => {
+                println!("You win!");
+                break;
+            }
+        }
+    }
+}
+```
