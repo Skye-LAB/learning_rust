@@ -128,6 +128,8 @@ Jika nomor yang dibandingkan terlalu besar maka fungsi `cmp` akan me-return `Ord
 
 > Didalam varian `Ordering::Equal` terdapat keyword `break`, adalah untuk menghentikan looping ketika angka yang ditebak sudah benar.
 
+## Penutup
+
 Wow, itu sangat banyak. Baik, Anda sudah menyelesaikan Chapter 2 dari [Rust Lang Book](https://doc.rust-lang.org/stable/book/), disini kita membuat sebuah program untuk menebak sebuah angka acak. Jika program di jalankan dengan `cargo run`, hasilnya akan seperti berikut:
 
 ```bash
