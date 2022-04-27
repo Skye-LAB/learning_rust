@@ -85,7 +85,16 @@ Nilai dalam tipe `Result` sama seperti nilai pada tipe lainnya, mempunyai *metho
 
 ## Menangani Inputan Yang Invalid
 
+Dalam program kita kali ini, user bisa saja menginputkan sebuah huruf atau kata dan buka angka. Dengan kode dibawah ini, user dapat menginputkan yan bukan angka, namun nanti program akan di ulang dari awal dengan keyword `continue`.
 
+```rust
+    let guess: u32 = match guess.trim().parse() { 
+        Ok(num) => num,
+        Err(_) => continue,
+    };
+```
+
+Dalam kode diatas, kita mendeklarasikan variabel `guess` lagi, hal ini disebhut *shadowing*. Shadowing membuat menggunakan kembali variabel `guess` daripada membuat variabel baru yang berbeda. Kita akan mempelajari shadowing lebih lanjut di [Chapter 3][chapter3].
 
 ## Mencetak Nilai Dengan println! Placeholder
 
@@ -150,3 +159,5 @@ Too big!
 You guessed: 13
 You win!
 ```
+
+[chapter3]: ../03_common_programming_concepts
