@@ -6,7 +6,7 @@ Tipe scalar mewakili nilai tunggal, diantaranya integer, floating-point, numbers
 
 ### Integer
 
-Di Rust integer dibagi menjadi dua, yaitu signed(diawali dengan `i`) dan unsigned(diawali dengan `u`). berikut tabel daftar integer:
+Di Rust integer dibagi menjadi dua, yaitu signed(dapat menyimpan nilai negatif) dan unsigned(tidak dapat menyimpan nilai negatif). berikut tabel daftar integer:
 
 | Length | Signed | Unsigned |
 | :----: | :----: | :------: |
@@ -16,3 +16,7 @@ Di Rust integer dibagi menjadi dua, yaitu signed(diawali dengan `i`) dan unsigne
 | 64-bit | i64    | u64      |
 | 128-bit| i128   | u128     |
 | arch   | isize  | usize    |
+
+Setiap varian signed dapat menyimpan data sebanyak -(2^n-1) sampai 2^n-1 -1, dimana *n* adalah besaran bit yang varian itu pakai.
+
+Selain itu, tipe `usize` dan `isize` memiliki nilai yang bergantung pada arsitektur dari komputer yang Anda gunakan, dimana akan memiliki nilai 64 bit jika Anda menggunakan komputer berarsitektur 64-bit dan 32 bit jika Anda menggunakan komputer berarsitektur 32-bit.
