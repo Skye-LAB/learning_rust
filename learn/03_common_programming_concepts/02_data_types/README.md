@@ -17,6 +17,6 @@ Di Rust integer dibagi menjadi dua, yaitu signed(dapat menyimpan nilai negatif) 
 | 128-bit| i128   | u128     |
 | arch   | isize  | usize    |
 
-Setiap varian signed dapat menyimpan data sebanyak -(2^n-1) sampai 2^n-1 -1, dimana *n* adalah besaran bit yang varian itu pakai.
+Setiap varian signed dapat menyimpan data sebanyak -(2^n-1^) sampai 2^n-1^-1, dimana *n* adalah besaran bit yang varian itu pakai.
 
 Selain itu, tipe `usize` dan `isize` memiliki nilai yang bergantung pada arsitektur dari komputer yang Anda gunakan, dimana akan memiliki nilai 64 bit jika Anda menggunakan komputer berarsitektur 64-bit dan 32 bit jika Anda menggunakan komputer berarsitektur 32-bit.
