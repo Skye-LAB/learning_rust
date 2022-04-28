@@ -29,4 +29,4 @@ Anda juga dapat menulisakan integer literals, contoh:
 | Hex             | `0xff`  |
 | Octal           | `0o77`  |
 | Binary          |`0b11_00`|
-| Byte(`u8 only`) | `b'A'`  |
+| Byte(`u8` only) | `b'A'`  |
