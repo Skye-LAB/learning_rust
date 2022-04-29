@@ -140,3 +140,29 @@ println!("The result is {}", result);
 Output program diatas adalah `The result is 20`.
 
 ### while
+
+Selanjutnya, kita dapat menggunakan `while` untuk looping dengan kondisi tertentu.
+
+```rust
+let mut number = 3;
+
+while number != 0 {
+    println!("{}!", number);
+
+    number -= 1;
+}
+```
+
+Program diatas, dapat dilihat `while` loop memiliki kondisi `number != 0`.
+
+### for
+
+Dengan `for` loop, kita dapat meniterasi suatu `array`, atau `tuple` untuk mengakses element-element didalamnya.
+
+```rust
+let a = [10, 20, 30, 40, 50];
+
+for element in a {
+    println!("the value is: {}", element);
+}
+```
