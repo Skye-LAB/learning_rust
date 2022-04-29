@@ -1,6 +1,8 @@
 # Control Flow
 
-## if else
+## If expression
+
+### if
 
 If di Rust hampir sama dengan bahasa pemrograman lainya.
 
@@ -37,7 +39,7 @@ For more information about this error, try `rustc --explain E0308`.
 error: could not compile `branches` due to previous error
 ```
 
-## else if
+### else if
 
 Daripada membuat banyak `if` seperti ini:
 
@@ -64,7 +66,7 @@ if x > 0 {
 }
 ```
 
-## else
+### else
 
 ```rust
 let x = 5;
@@ -78,7 +80,7 @@ if x > 0 {
 }
 ```
 
-# if di dalam let
+### if di dalam let
 
 Kita juga bisa menuliskan if didalam let statement.
 
@@ -86,3 +88,55 @@ Kita juga bisa menuliskan if didalam let statement.
     let condition = true;
     let number = if condition { 5 } else { 6 };
 ```
+
+## Looping
+
+Ada tiga jenis looping pada Rust, yaitu `loop`, `while`, `for`.
+
+### loop
+
+Pertama, untuk membuat looping ini, kita dapat menggunakan keyword `loop`.
+
+```rust
+loop {
+    println!("again!");
+}
+```
+
+Untuk memanipulasi looping ini, kita dapat menggunakan `continue`, untuk melanjutkan ke putaran selanjutnya atau `break`, untuk menghentikan looping.
+
+```rust
+let mut counter = 0;
+
+loop {
+    println!("{}", counter);
+
+    if counter == 5 {
+        continue;
+    } else if continue == 10 {
+        break;
+    }
+
+    counter += 1;
+};
+```
+
+Kita juga dapat mengembalikan nilai dari sebuah loop.
+
+```rust
+let mut counter = 0;
+
+let result = loop {
+    counter += 1;
+
+    if counter == 10 {
+        break counter * 2;
+    }
+};
+
+println!("The result is {}", result);
+```
+
+Output program diatas adalah `The result is 20`.
+
+### while
