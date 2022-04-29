@@ -91,4 +91,4 @@ char c = 'z';
 let heart_eyed_cat = '😻';
 ```
 
-Di Rust `char` dituliskan dengan tanda petik satu `' '`, berbeda dengan string yang menggunakan tanda petik dua `" "`. di Rust tipe `char` memiliki besaran empat bytes dan mewakili nilai Unicode tunggal, yang berarti dapat mewakili lebih daripada hanya ASCII. Karakter Jepang, China atau bahkan emoji, valid sebagai nilai `char`. Akan lebih dijelaskan di [Chapter 8](../../08_common_collections) tentang ==Storing UTF-8 Encoded Text With String==
+Di Rust `char` dituliskan dengan tanda petik satu `' '`, berbeda dengan string yang menggunakan tanda petik dua `" "`. di Rust tipe `char` memiliki besaran empat bytes dan mewakili nilai Unicode tunggal, yang berarti dapat mewakili lebih daripada hanya ASCII. Karakter Jepang, China atau bahkan emoji, valid sebagai nilai `char`. Akan lebih dijelaskan di [Chapter 8](../../08_common_collections) tentang **Storing UTF-8 Encoded Text With String**
