@@ -13,7 +13,7 @@ Variabel secara default adalah immutable untuk membuatnya mutable tambahkan keyw
 
 ## Konstanta
 
-Konstanta diRust biasa di tulis dengan huruf kapital semua dan underscore untuk memisahkan kata. Konstanta selalu immutable, artinya pemakaian `mut` tidak diperbolehkan di konstanta. Penulisan konstanta haru diikuti dengan anotasi tipe data, kita akan mempelajarinya di bagian [Data
+Konstanta diRust biasa di tulis dengan huruf kapital semua dan underscore untuk memisahkan kata. Konstanta selalu immutable, artinya pemakaian `mut` tidak diperbolehkan di konstanta. Penulisan konstanta haru diikuti dengan anotasi tipe data, kita akan mempelajari tipe data di bagian [Data
 Types](../02_data_types).
 
 ```rust
