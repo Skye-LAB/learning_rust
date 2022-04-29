@@ -6,7 +6,16 @@ Tipe scalar mewakili nilai tunggal, diantaranya integer, floating-point, numbers
 
 ### Integer
 
-Di Rust integer dibagi menjadi dua, yaitu signed(dapat menyimpan nilai negatif) dan unsigned(tidak dapat menyimpan nilai negatif). berikut tabel daftar integer:
+Di Rust integer dibagi menjadi dua, yaitu signed(dapat menyimpan nilai negatif) dan unsigned(tidak dapat menyimpan nilai negatif).
+
+```rust
+let x = 5 // i32
+let y: u32 = 10 // u32
+```
+
+Secara default tipe integer adalah `i32`.
+
+Berikut tabel daftar tipe integer:
 
 | Length | Signed | Unsigned |
 | :----: | :----: | :------: |
@@ -30,3 +39,56 @@ Anda juga dapat menulisakan integer literals, contoh:
 | Octal           | `0o77`  |
 | Binary          |`0b11_00`|
 | Byte(`u8` only) | `b'A'`  |
+
+## Floating-Point
+
+Di Rust tipe floating-point dibagi menjadi dua tipe, yaitu `f32` dan `f64`.
+
+```rust
+let x = 5.0 // f64
+let y: f32 = 10.0 // f32
+```
+
+Secara default tipe floating-point adalah `i32`.
+
+## Operasi Numerik
+
+Rust juga mendukung operasi matematika sederhana seperti penjumlahan, pengurangan, perkalian, pembagian dan mencari sisa hasil bagi atau biasa disebut modulus.
+
+```rust
+// penjumlahan
+let sum = 5 + 10;
+
+// pengurangan
+let difference = 95.5 - 4.3;
+
+// perkalian
+let product = 4 * 30;
+
+// pembagian
+let quotient = 56.7 / 32.2;
+let floored = 2 / 3; // Results in 0
+
+// modulus
+let remainder = 43 % 5;
+```
+
+## Boolean
+
+Tipe boolean menyimpan dua nilai yaitu `true` dan `false`.
+
+```rust
+let t = true;
+let f: bool = false;
+```
+
+## Karakter
+
+Contoh penulisan `char` di Rust:
+
+```rust
+char c = 'z';
+let heart_eyed_cat = '😻';
+```
+
+Di Rust `char` dituliskan dengan tanda petik satu `' '`, berbeda dengan string yang menggunakan tanda petik dua `" "`. di Rust tipe `char` memiliki besaran empat bytes dan mewakili nilai Unicode tunggal, yang berarti dapat mewakili lebih daripada hanya ASCII. Karakter Jepang, China atau bahkan emoji, valid sebagai nilai `char`. Akan lebih dijelaskan di [Chapter 8](../../08_common_collections) tentang ==Storing UTF-8 Encoded Text With String==

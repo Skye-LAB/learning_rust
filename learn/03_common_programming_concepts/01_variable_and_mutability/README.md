@@ -40,6 +40,8 @@ dengan variabel kedua, artinya nilai dari variabel kedualah yang program lihat.
     println!("The value of x is: {}", x);
 ```
 
+Diprogram diatas, pertama `x` akan menyimpan `5`, lalu di shadow dengan mengulangi `let x =`, menambahkan nilai awal dengan `1` jadi nilai `x` sekarang adalah `6`. Kemudian, di scope dalam, `let` ketiga meng-shadow x, mengalikan nilai tadi dengan `2`, memberikan `x` nilai `12`. Kemudian, scope berakhir membuat `x` kembali menjadi `6`.
+
 Shadowning berbeda dengan menggunakan keyword `mut` karena kita bisa secara efektif membuah sebuah
 variabel baru, kita bisa mengganti tipe dari nilai tetapi menggunakan nama yang sama. Contohnya:
 
