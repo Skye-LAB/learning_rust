@@ -40,7 +40,7 @@ Anda juga dapat menulisakan integer literals, contoh:
 | Binary          |`0b11_00`|
 | Byte(`u8` only) | `b'A'`  |
 
-## Floating-Point
+### Floating-Point
 
 Di Rust tipe floating-point dibagi menjadi dua tipe, yaitu `f32` dan `f64`.
 
@@ -51,7 +51,7 @@ let y: f32 = 10.0 // f32
 
 Secara default tipe floating-point adalah `i32`.
 
-## Operasi Numerik
+### Operasi Numerik
 
 Rust juga mendukung operasi matematika sederhana seperti penjumlahan, pengurangan, perkalian, pembagian dan mencari sisa hasil bagi atau biasa disebut modulus.
 
@@ -73,7 +73,7 @@ let floored = 2 / 3; // Results in 0
 let remainder = 43 % 5;
 ```
 
-## Boolean
+### Boolean
 
 Tipe boolean menyimpan dua nilai yaitu `true` dan `false`.
 
@@ -82,7 +82,7 @@ let t = true;
 let f: bool = false;
 ```
 
-## Karakter
+### Karakter
 
 Contoh penulisan `char` di Rust:
 
@@ -92,3 +92,39 @@ let heart_eyed_cat = '😻';
 ```
 
 Di Rust `char` dituliskan dengan tanda petik satu `' '`, berbeda dengan string yang menggunakan tanda petik dua `" "`. di Rust tipe `char` memiliki besaran empat bytes dan mewakili nilai Unicode tunggal, yang berarti dapat mewakili lebih daripada hanya ASCII. Karakter Jepang, China atau bahkan emoji, valid sebagai nilai `char`. Akan lebih dijelaskan di [Chapter 8](../../08_common_collections) tentang **Storing UTF-8 Encoded Text With String**
+
+## Tipe Compound
+
+Tipe compound atau gabungan dapat menyimpan banyak data ke dalam satu tipe. Rust memiliki dua tipe compound, yaitu tuple dan array.
+
+### Tuple
+
+Tuple memiliki pangjang yang telah ditentukan, saat sudah dideklarasikan, panjang tuple tidak dapat ditambahkan. Contoh mendeklarasikan tuple:
+
+```rust
+let tup: (i32, f64, u8) = (500, 6.4, 1);
+```
+
+Tipe nilai didalam value boleh berbeda.
+
+Untuk mengakses setiap nilai didalam tuple, kita dapat menggunakan tanda `.`.
+
+```rust
+let x: (i32, f64, u8) = (500, 6.4, 1);
+
+let five_hundred = x.0;
+
+let six_point_four = x.1;
+
+let one = x.2;
+```
+
+Kita juga bisa melakukan *destructure assignment* kepada tuple, contoh:
+
+```rust
+let tup = (500, 6.4, 1);
+
+let (x, y, z) = tup;
+
+println!("The value of y is: {}", y);
+```
