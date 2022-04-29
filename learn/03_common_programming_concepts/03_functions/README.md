@@ -40,7 +40,7 @@ fn double(n: u32) -> u32 {
 }
 ```
 
-Atau bisa disederhanakan dengan:
+Atau dapat disederhanakan dengan:
 
 ```rust
 fn double(n: u32) -> u32 {
