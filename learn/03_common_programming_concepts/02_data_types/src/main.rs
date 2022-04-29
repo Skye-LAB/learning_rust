@@ -31,7 +31,9 @@ fn main() {
     // char
     let c = 'z';
 
-
     // tuple
     let tup: (i32, f64, u8) = (500, 6.4, 1);
+
+    // array
+    let arr: [i32; 5] = [1, 2, 3, 4, 5];
 }

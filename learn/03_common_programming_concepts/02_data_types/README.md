@@ -107,7 +107,7 @@ let tup: (i32, f64, u8) = (500, 6.4, 1);
 
 Tipe nilai didalam value boleh berbeda.
 
-Untuk mengakses setiap nilai didalam tuple, kita dapat menggunakan tanda `.`.
+Untuk mengakses setiap element didalam tuple, kita dapat menggunakan tanda `.`.
 
 ```rust
 let x: (i32, f64, u8) = (500, 6.4, 1);
@@ -127,4 +127,33 @@ let tup = (500, 6.4, 1);
 let (x, y, z) = tup;
 
 println!("The value of y is: {}", y);
+```
+
+### Array
+
+Array di Rust juga memiliki panjang yang tetap, tidak bisa ditambah atau dikurang, juga berbeda dengan tuple, tipe tiap nilai didalam array harus sama.
+
+```rust
+let arr: [i32; 5] = [1, 2, 3, 4, 5];
+```
+
+Anda juga bisa menginisialisasikan array yang memiliki nilai yang sama tiap element, seperti ini:
+
+```rust
+let a = [3; 5];
+```
+
+Kode diatas sama dengan `let a = [3, 3, 3, 3, 3]`.
+
+#### Mengakses tiap element
+
+Untuk mengakses tiap element didalam array, kita dapat menggunakan `nama[n]`.
+
+```rust
+let a = [1, 2, 3, 4, 5];
+
+let first = a[0];
+let second = a[1];
+
+println!("The first element is {}", first);
 ```
