@@ -1,6 +1,6 @@
 # What Is Ownership
 
-# Stack Dan Heap
+## Stack Dan Heap
 
 Pertama, kita harus tahu tentang apa itu stack dan heap. Stack dan heap adalah dua tempat penyimpanan yang berbeda di komputer.
 
@@ -9,3 +9,15 @@ Pertama, kita harus tahu tentang apa itu stack dan heap. Stack dan heap adalah d
   - Rust perlu mengetahui ukuran sebuah variabel saat compile time. Sehingga variabel sederhana seperti `i32` akan ditaruh kedalam stack.
 
   - Tapi ada beberapa tipe yang tidak bisa kita ketahui ukurannya saat compile time, sedangkan stack perlu berapa ukurannya secara tepat. Lalu bagaimana? Pertama, kita dapat menaruh data tersebut ke dalam heap, karena heap dapat menyimpan data dengan berbagai ukuran. Lalu kita simpan pointer dari data tersebut ke dalam stack, hal ini sangat masuk akal karena kita tahu ukuran dari sebuah pointer.
+
+## Ownership Rules
+
+Pertama, kita harus tahu apa saja rules atau aturan apa saja dalam ownership.
+
+  - Setiap nilai dari Rust mempunyai variabel yang dipanggil *owner*.
+
+  - Hanya bisa terdapat satu *owner* dalam satu waktu.
+
+  - Ketika suatu *owner* keluar dari sebuah scope, nilainya akan dihapuskan.
+
+## Scope Variabel
