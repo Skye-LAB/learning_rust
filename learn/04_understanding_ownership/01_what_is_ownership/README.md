@@ -21,3 +21,15 @@ Pertama, kita harus tahu apa saja rules atau aturan apa saja dalam ownership.
   - Ketika suatu *owner* keluar dari sebuah scope, nilainya akan dihapuskan.
 
 ## Scope Variabel
+
+Contoh ownership pertama adalah melihat scope suatu variabel.
+
+```rust
+{                      // s is not valid here, it’s not yet declared
+    let s = "hello";   // s is valid from this point forward
+
+    // do stuff with s
+}                      // this scope is now over, and s is no longer valid
+```
+
+Variabel `s` merupakan tipe string literal(`&str`) yang nilainya adalah `"hello"`. Variabel `s` hanya valid didalam tanda `{}`, sehingga jika mengaksesnya diluar tanda `{}` maka akan terjadi error.
