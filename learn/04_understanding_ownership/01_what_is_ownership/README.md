@@ -1,0 +1,11 @@
+# What Is Ownership
+
+# Stack Dan Heap
+
+Pertama, kita harus tahu tentang apa itu stack dan heap. Stack dan heap adalah dua tempat penyimpanan yang berbeda di komputer.
+
+  - Stack sangat cepat, namun ukurannya tidak dapat bertambah atau berkurang. Sedangkan heap tidak terlalu cepat namun ukuran heap dapat berkurang maupun bertambah.
+  
+  - Rust perlu mengetahui ukuran sebuah variabel saat compile time. Sehingga variabel sederhana seperti `i32` akan ditaruh kedalam stack.
+
+  - Tapi ada beberapa tipe yang tidak bisa kita ketahui ukurannya saat compile time, sedangkan stack perlu berapa ukurannya secara tepat. Lalu bagaimana? Pertama, kita dapat menaruh data tersebut ke dalam heap, karena heap dapat menyimpan data dengan berbagai ukuran. Lalu kita simpan pointer dari data tersebut ke dalam stack, hal ini sangat masuk akal karena kita tahu ukuran dari sebuah pointer.

@@ -157,7 +157,7 @@ Program diatas, dapat dilihat `while` loop memiliki kondisi `number != 0`.
 
 ### for
 
-Dengan `for` loop, kita dapat meniterasi suatu `array`, atau `tuple` untuk mengakses element-element didalamnya.
+Dengan `for` loop, kita dapat meng-iterasi suatu `array`, atau `tuple` untuk mengakses element-element didalamnya.
 
 ```rust
 let a = [10, 20, 30, 40, 50];
