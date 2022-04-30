@@ -32,4 +32,6 @@ Contoh ownership pertama adalah melihat scope suatu variabel.
 }                      // this scope is now over, and s is no longer valid
 ```
 
-Variabel `s` merupakan tipe string literal(`&str`) yang nilainya adalah `"hello"`. Variabel `s` hanya valid didalam tanda `{}`, sehingga jika mengaksesnya diluar tanda `{}` maka akan terjadi error.
+Variabel `s` merupakan tipe string literal(`&str`) yang nilainya adalah `"hello"`. Variabel `s` hanya valid didalam tanda `{}`, sehingga variabel `s` tidak dapat diakses diluar tanda `{}` atau diluar scope.
+
+## Tipe String
