@@ -102,3 +102,27 @@ let s2 = s1.clone();
 
 ## Ownership dan Fungsi
 
+Menyertakan(passing) variabel ke sebuah fungsi, sama jadinya seperti assignment diatas.
+
+```rust
+fn main() {
+    let s = String::from("hello");  // s masuk ke scope
+
+    takes_ownership(s);             // nilai s move ke fungsi
+                                    // jadi s tida valid disini
+
+    let x = 5;                      // x masuk ke scope
+
+    makes_copy(x);                  // x dicopy ke dalam fungsi,
+                                    // jadi x masih valid di sini
+
+} // disini, x keluar dari scope.
+
+fn takes_ownership(some_string: String) { // some_string masuk ke scope
+    println!("{}", some_string);
+} // disini, some_string keluar dari scope dan 'drop' dipanggil
+
+fn makes_copy(some_integer: i32) { // some_integer masuk ke scope
+    println!("{}", some_integer);
+} // disini, some_integer masuk ke scope.
+```
