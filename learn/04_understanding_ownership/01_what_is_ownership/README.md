@@ -39,6 +39,14 @@ Variabel `s` merupakan tipe string literal(`&str`) yang nilainya adalah `"hello"
 Tipe `String` berbed dengan string literal, dimana ukuran tipe `String` dapat bertambah dan berkurang dan tipe `String` juga mutable sedangkan tipe string literal immutable. Sehingga nilai tipe `String` akan disimpan ke dalam heap.
 
 ```rust
+let s = String::from("hello");
+```
+
+Ketika kode diatas dijalankan, nilai `String` `"hello"` akan disimpan di heap, lalu pointernya akan disimpan ke dalam variabel `s`.
+
+Mengubah nilai tipe `String`:
+
+```rust
 let mut s = String::from("hello");
 
 s.push_str(", world!"); // push_str() appends a literal to a String
