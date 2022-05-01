@@ -25,11 +25,12 @@ Pertama, kita harus tahu apa saja rules atau aturan apa saja dalam ownership.
 Contoh ownership pertama adalah melihat scope suatu variabel.
 
 ```rust
-{                      // s is not valid here, it’s not yet declared
-    let s = "hello";   // s is valid from this point forward
+{
+    // s tidak valid disini, karena belum dideklarasi
+    let s = "hello"; // s valid mulai dari sini
 
-    // do stuff with s
-}                      // this scope is now over, and s is no longer valid
+    // lakukan sesuatu dengan s
+} // scope berakhir, s tidak lagi valid
 ```
 
 Variabel `s` merupakan tipe string literal(`&str`) yang nilainya adalah `"hello"`. Variabel `s` hanya valid didalam tanda `{}`, sehingga variabel `s` tidak dapat diakses diluar tanda `{}` atau diluar scope.
@@ -58,10 +59,10 @@ Ketika suatu variabel bertipe `String` keluar dari scope, Rust akan memanggil fu
 
 ```rust
 {
-    let s = String::from("hello"); // s is valid from this point forward
+    let s = String::from("hello"); // s valid mulai dari sini
 
-    // do stuff with s
-} // this scope is over, 'drop' is called and s is no longer valid
+    // lakukan sesuatu dengan s
+} // scope berakhir, 'drop' dipanggil dan s tidak lagi valid
 ```
 
 ## Copy
@@ -88,6 +89,16 @@ let s2 = s1;
 
 Apakah sama seperti sebelumnya? Tidak. Pertama kita harus tahu, `String` terbuat dari pointer yang menunjuk ke memori yang menyimpan content dari string tersebut. Pointer ini disimpan di stack. Ketika kita menetapkan(assign) `s1` ke `s2`, pointer tersebut dikopi.
 
-Lalu bagaimana salah satu variabel diatas keluar dari sebuah scope, bagaimana jika salah satu variabel tersebut ter`drop`, apakah variabel yang lainnya masih menyimpan suatu data. Untuk menghindari masalah ini, setelah kode `let s2 = s1`, Rust membuat variabel `s1` tidak valid lagi.
+Lalu bagaimana salah satu variabel diatas keluar dari sebuah scope, bagaimana jika salah satu variabel tersebut ter`drop`, apakah variabel yang lainnya masih menyimpan suatu data. Untuk menghindari masalah ini, setelah baris `let s2 = s1`, Rust membuat variabel `s1` tidak valid lagi.
 
 ## Clone
+
+Kita juga dapat mengkopi data dari heap menggunakan fungsi `clone`.
+
+```rust
+let s1 = String::from("hello");
+let s2 = s1.clone();
+```
+
+## Ownership dan Fungsi
+
