@@ -35,3 +35,23 @@ Contoh ownership pertama adalah melihat scope suatu variabel.
 Variabel `s` merupakan tipe string literal(`&str`) yang nilainya adalah `"hello"`. Variabel `s` hanya valid didalam tanda `{}`, sehingga variabel `s` tidak dapat diakses diluar tanda `{}` atau diluar scope.
 
 ## Tipe String
+
+Tipe `String` berbed dengan string literal, dimana ukuran tipe `String` dapat bertambah dan berkurang dan tipe `String` juga mutable sedangkan tipe string literal immutable. Sehingga nilai tipe `String` akan disimpan ke dalam heap.
+
+```rust
+let mut s = String::from("hello");
+
+s.push_str(", world!"); // push_str() appends a literal to a String
+
+println!("{}", s); // This will print `hello, world!`
+```
+
+Ketika suatu variabel bertipe `String` keluar dari scope,Rust akan memanggil fungsi spesial, yaitu `drop`, dimana fungsi ini akan membebaskan memori yang ada di heap.
+
+```rust
+{
+    let s = String::from("hello"); // s is valid from this point forward
+
+    // do stuff with s
+} // this scope is over, 'drop' is called and s is no longer valid
+```
