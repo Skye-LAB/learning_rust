@@ -54,7 +54,7 @@ s.push_str(", world!"); // push_str() appends a literal to a String
 println!("{}", s); // This will print `hello, world!`
 ```
 
-Ketika suatu variabel bertipe `String` keluar dari scope,Rust akan memanggil fungsi spesial, yaitu `drop`, dimana fungsi ini akan membebaskan memori yang ada di heap.
+Ketika suatu variabel bertipe `String` keluar dari scope, Rust akan memanggil fungsi spesial, yaitu `drop`, dimana fungsi ini akan membebaskan memori yang ada di heap.
 
 ```rust
 {
@@ -63,3 +63,31 @@ Ketika suatu variabel bertipe `String` keluar dari scope,Rust akan memanggil fun
     // do stuff with s
 } // this scope is over, 'drop' is called and s is no longer valid
 ```
+
+## Copy
+
+Apa yang terjadi ketika kode ini dijalankan?
+
+```rust
+let x = 5;
+let y = x;
+```
+
+Mungkin Anda berpikir, kaitkan nilai `5` ke variabel `x` dan variabel `x` ke variabel `y`, jadi kedua variabel tersebut mempunyai nilai `5`. Pertanyaan tersebut benar, karena nilai integer sudah diketahui ukurannya akan disimpan kedalam stack, jadi membuat sebuah copy dari suatu nilai sangatlah cepat.
+
+Lalu bagaimana dengan nilai yang disimpan di dalam heap?
+
+## Move
+
+Coba pikirkan apa yang terjadi jika kode ini dijalankan.
+
+```rust
+let s1 = String::from("hello");
+let s2 = s1;
+```
+
+Apakah sama seperti sebelumnya? Tidak. Pertama kita harus tahu, `String` terbuat dari pointer yang menunjuk ke memori yang menyimpan content dari string tersebut. Pointer ini disimpan di stack. Ketika kita menetapkan(assign) `s1` ke `s2`, pointer tersebut dikopi.
+
+Lalu bagaimana salah satu variabel diatas keluar dari sebuah scope, bagaimana jika salah satu variabel tersebut ter`drop`, apakah variabel yang lainnya masih menyimpan suatu data. Untuk menghindari masalah ini, setelah kode `let s2 = s1`, Rust membuat variabel `s1` tidak valid lagi.
+
+## Clone
