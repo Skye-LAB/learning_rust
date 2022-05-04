@@ -85,3 +85,61 @@ let r3 = &mut s; // masalah
 
 println!("{}, {}, and {}", r1, r2, r3);
 ```
+
+Perlu diingat, bahwa scope reference berakhir disaat reference itu terakhir digunakan.
+
+```rust
+let mut s = String::from("hello");
+
+let r1 = &s; // tidak masalah
+let r2 = &s; // tidak masalah
+println!("{} and {}", r1, r2);
+// variable r1 dan r2 tidak digunakan lagi setelah ini.
+
+let r3 = &mut s; // tidak masalah
+println!("{}", r3);
+```
+
+## Dangling Reference
+
+Di Rust, compiler menjamin reference pasti memiliki data.
+
+```rust
+fn main() {
+    let reference_to_nothing = dangle();
+}
+
+fn dangle() -> &String { // dangle mengembalikan(return) reference dari String
+    let s = String::from("hello"); // s masuk ke scope
+
+    &s // kita mengembalikan reference sebuah String, s
+} // disini, s keluar dari scope dan didrop
+```
+
+Program diatas akan error, karena `&s` menunjuk sebuah invalid memori.
+
+```bash
+$ cargo run
+   Compiling ownership v0.1.0 (file:///reference_and_borrowing)
+error[E0106]: missing lifetime specifier
+ --> src/main.rs:5:16
+  |
+5 | fn dangle() -> &String {
+  |                ^ expected named lifetime parameter
+  |
+  = help: this function's return type contains a borrowed value, but there is no value for it to be borrowed from
+help: consider using the `'static` lifetime
+  |
+5 | fn dangle() -> &'static String {
+  |                ~~~~~~~~
+
+For more information about this error, try `rustc --explain E0106`.
+error: could not compile `ownership` due to previous error
+```
+
+Error diatas mengacu pada sebuah fitur *lifetime*, yang akan kita pelajari pada [Chapter 10](../../10_generic_types_traits_and_lifetimes). Kita dapat melihat pesan errornya adalah:
+
+```
+this function's return type contains a borrowed value, but there is no value
+for it to be borrowed from
+```
