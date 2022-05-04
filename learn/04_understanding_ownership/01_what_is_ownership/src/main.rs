@@ -25,24 +25,24 @@ fn main() {
     let s2 = s1.clone();
 
     // ownership dan fungsi
-    let s = String::from("hello");  // s masuk ke scope
+    let s = String::from("hello"); // s masuk ke scope
 
-    takes_ownership(s);             // nilai s move ke fungsi
-                                    // jadi s tidak valid disini
+    takes_ownership(s); // nilai s move ke fungsi
+                        // jadi s tidak valid disini
 
-    let x = 5;                      // x masuk ke scope
+    let x = 5; // x masuk ke scope
 
-    makes_copy(x);                  // x dicopy ke dalam fungsi,
-                                    // jadi x masih valid di sini
+    makes_copy(x); // x dicopy ke dalam fungsi,
+                   // jadi x masih valid di sini
 
     // nilai return dan ownership
-    let s1 = gives_ownership();         // gives_ownership memindahkan(move) nilai retun ke s1
+    let s1 = gives_ownership(); // gives_ownership memindahkan(move) nilai retun ke s1
 
-    let s2 = String::from("hello");     // s2 masuk ke scope
+    let s2 = String::from("hello"); // s2 masuk ke scope
 
-    let s3 = takes_and_gives_back(s2);  // s2 berpindah(move) ke
-                                        // takes_and_gives_back, yang juga
-                                        // memindahkan(move) nilai return ke s3
+    let s3 = takes_and_gives_back(s2); // s2 berpindah(move) ke
+                                       // takes_and_gives_back, yang juga
+                                       // memindahkan(move) nilai return ke s3
 }
 
 fn takes_ownership(some_string: String) { // some_string masuk ke scope
@@ -54,14 +54,13 @@ fn makes_copy(some_integer: i32) { // some_integer masuk ke scope
 } // disini, some_integer masuk ke scope.
 
 fn gives_ownership() -> String {
-
     let some_string = String::from("yours"); // some_string masuk ke scope
 
-    some_string                              // some_string di-return dan pindah(move)
-                                             // ke dimana fungsi dipanggil
+    some_string // some_string di-return dan pindah(move)
+                // ke dimana fungsi dipanggil
 }
 
 fn takes_and_gives_back(a_string: String) -> String { // a_string masuk ke scope
 
-    a_string  // a_string di-return dan berpindah ke dimana fungsi dipanggil
+    a_string // a_string di-return dan berpindah ke dimana fungsi dipanggil
 }
