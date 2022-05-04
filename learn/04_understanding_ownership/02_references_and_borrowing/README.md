@@ -140,6 +140,5 @@ error: could not compile `ownership` due to previous error
 Error diatas mengacu pada sebuah fitur *lifetime*, yang akan kita pelajari pada [Chapter 10](../../10_generic_types_traits_and_lifetimes). Kita dapat melihat pesan errornya adalah:
 
 ```
-this function's return type contains a borrowed value, but there is no value
-for it to be borrowed from
+this function's return type contains a borrowed value, but there is no value for it to be borrowed from
 ```
