@@ -2,7 +2,7 @@ fn main() {
     let word = String::from("Hello world!");
 
     // string slice
-    let s = &word[..5];
+    let s = &word[..3];
 
     let first_word = first_word(&word);
 
