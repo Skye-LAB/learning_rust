@@ -20,3 +20,11 @@ let hello = &s[..5];
 let world = &s[6..];
 let hello_world = &s[..];
 ```
+
+## String Literal Adalah Slice(Irisan)
+
+String literal, juga merupakan irisan, itulah mengapa mereka immutable.
+
+```rust
+let s = "Hello, world!";
+```
