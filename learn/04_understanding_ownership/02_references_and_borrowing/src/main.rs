@@ -11,7 +11,7 @@ fn main() {
     change(&mut s);
 
     let r1 = &mut s;
-    // error, karena tidap boleh ada dua mutable reference
+    // error, karena tidak boleh ada dua mutable reference
     // let r2 = &mut s;
     //
     // println!("{}, {}", r1, r2);
